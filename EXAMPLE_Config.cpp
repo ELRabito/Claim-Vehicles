@@ -7,7 +7,7 @@ class Tank
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "true";
+            condition = "call ExileClient_object_vehicle_interaction_show";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
@@ -21,7 +21,7 @@ class Car
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "true";
+            condition = "call ExileClient_object_vehicle_interaction_show";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
@@ -35,7 +35,7 @@ class Air
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "true";
+            condition = "call ExileClient_object_vehicle_interaction_show";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
@@ -49,7 +49,7 @@ class Boat
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "true";
+            condition = "call ExileClient_object_vehicle_interaction_show";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
