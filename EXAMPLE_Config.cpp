@@ -5,7 +5,7 @@ class CfgExileCustomCode
 };
 
 
-// Replace this in your CfgInteractionMenus.
+// Add this in your CfgInteractionMenus.
 class Tank
 {
     targetType = 2;
