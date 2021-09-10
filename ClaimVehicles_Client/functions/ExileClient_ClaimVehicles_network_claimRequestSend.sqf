@@ -28,10 +28,6 @@ try
     {
         throw "You need a codelock to do that!";
     };
-    if !((locked _vehicleObj) isEqualTo 1) then 
-    {
-	throw "This vehicle is already claimed.<br/>-<br/>You can change the pin at Vehicle Customs trader!";
-    };
     if !(local _vehicleObj) then
     {
         throw "Get in the drivers seat first";
@@ -39,6 +35,10 @@ try
     if !(_object isKindOf "AIR" || _object isKindOf "CAR" || _object isKindOf "TANK") then
     {
         throw "You cannot claim this";
+    };
+    if !((locked _vehicleObj) isEqualTo 1) then 
+    {
+	throw "This vehicle is already claimed.<br/>-<br/>You can change the pin at Vehicle Customs trader!";
     };
     _pincode = 4 call ExileClient_gui_keypadDialog_show;
 
