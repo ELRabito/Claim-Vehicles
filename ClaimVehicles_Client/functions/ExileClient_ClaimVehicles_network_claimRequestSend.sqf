@@ -1,6 +1,6 @@
 /*
 
- 	Name: ExileServer_ClaimVehicle_network_InsertClaimedVehicle.sqf
+ 	Name: ExileClient_ClaimVehicles_network_claimRequestSend.sqf
 
  	Author: MezoPlays
     Copyright (c) 2016 MezoPlays
@@ -27,6 +27,10 @@ try
 	if !("Exile_Item_Codelock" in (player call ExileClient_util_playerCargo_list)) then
     {
         throw "You need a codelock to do that!";
+    };
+    if !((locked _vehicleObj) isEqualTo 1) then 
+    {
+	throw "This vehicle is already claimed.<br/>-<br/>You can change the pin at Vehicle Customs trader!";
     };
     if !(local _vehicleObj) then
     {
