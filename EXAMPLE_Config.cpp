@@ -1,3 +1,11 @@
+// Add the override for ExileClient_object_vehicle_interaction_show to your CfgExileCustomCode.
+class CfgExileCustomCode 
+{
+	ExileClient_object_vehicle_interaction_show = "Exile_Client_Overrides\ExileClient_object_vehicle_interaction_show.sqf";
+};
+
+
+// Replace this in your CfgInteractionMenus.
 class Tank
 {
     targetType = 2;
