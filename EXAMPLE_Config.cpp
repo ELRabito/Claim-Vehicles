@@ -29,7 +29,7 @@ class Car
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "call ExileClient_object_vehicle_interaction_show";
+            condition = "((call ExileClient_object_vehicle_interaction_show) && (locked ExileClientInteractionObject isEqualTo 1))";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
@@ -43,7 +43,7 @@ class Air
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "call ExileClient_object_vehicle_interaction_show";
+            condition = "((call ExileClient_object_vehicle_interaction_show) && (locked ExileClientInteractionObject isEqualTo 1))";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
@@ -57,7 +57,7 @@ class Boat
         class ClaimVehicle: ExileAbstractAction
         {
             title = "Claim Ownership";
-            condition = "call ExileClient_object_vehicle_interaction_show";
+            condition = "((call ExileClient_object_vehicle_interaction_show) && (locked ExileClientInteractionObject isEqualTo 1))";
             action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
         };
     };
