@@ -29,7 +29,7 @@ try
     {
         throw "You cannot claim this vehicle";
     };
-    if (_vehicle getVariable ["ExileIsPersistent", true]) then
+    if (_vehicle getVariable ["ExileIsPersistent", false]) then
     {
         throw "This vehicle is already owned";
     };
