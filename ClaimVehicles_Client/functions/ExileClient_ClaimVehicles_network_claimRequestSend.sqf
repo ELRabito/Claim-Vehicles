@@ -1,8 +1,8 @@
 /*
 
- 	Name: ExileClient_ClaimVehicles_network_claimRequestSend.sqf
+    Name: ExileClient_ClaimVehicles_network_claimRequestSend.sqf
 
- 	Author: MezoPlays
+    Author: MezoPlays
     Copyright (c) 2016 MezoPlays
 
     This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -16,23 +16,23 @@ _object = typeOf _object;
 
 try
 {
-	if(ExileClientPlayerIsInCombat)then
-	{
-		throw "You cannot do that whilst in combat!";
-	};
-	if(ExilePlayerInSafezone)then
+    if(ExileClientPlayerIsInCombat)then
     {
-    	throw "You cannot do that in Safezones!";
-	};
-	if !("Exile_Item_Codelock" in (player call ExileClient_util_playerCargo_list)) then
+        throw "You cannot do that whilst in combat!";
+    };
+    if(ExilePlayerInSafezone)then
+    {
+        throw "You cannot do that in Safezones!";
+    };
+    if !("Exile_Item_Codelock" in (player call ExileClient_util_playerCargo_list)) then
     {
         throw "You need a codelock to do that!";
     };
-	if !(local _vehicleObj) then
+    if !(local _vehicleObj) then
     {
         throw "Get in the drivers seat first!";
     };
-	if (_vehicleObj getVariable ["ExileIsPersistent", false]) then
+    if (_vehicleObj getVariable ["ExileIsPersistent", false]) then
     {
         throw "This vehicle is already claimed!";
     };
