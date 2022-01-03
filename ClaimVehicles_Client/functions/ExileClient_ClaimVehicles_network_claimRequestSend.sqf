@@ -16,29 +16,29 @@ _object = typeOf _object;
 
 try
 {
-    if(ExilePlayerInSafezone)then
-    {
-    	throw "You cannot do that in traders";
-	};
 	if(ExileClientPlayerIsInCombat)then
 	{
-		throw "You cannot do that whilst in combat";
+		throw "You cannot do that whilst in combat!";
+	};
+	if(ExilePlayerInSafezone)then
+    {
+    	throw "You cannot do that in Safezones!";
 	};
 	if !("Exile_Item_Codelock" in (player call ExileClient_util_playerCargo_list)) then
     {
         throw "You need a codelock to do that!";
     };
-    if !(local _vehicleObj) then
+	if !(local _vehicleObj) then
     {
-        throw "Get in the drivers seat first";
+        throw "Get in the drivers seat first!";
+    };
+	if (_vehicleObj getVariable ["ExileIsPersistent", false]) then
+    {
+        throw "This vehicle is already claimed!";
     };
     if !(_object isKindOf "AIR" || _object isKindOf "CAR" || _object isKindOf "TANK") then
     {
-        throw "You cannot claim this";
-    };
-    if !((locked _vehicleObj) isEqualTo 1) then 
-    {
-	throw "This vehicle is already claimed.<br/>-<br/>You can change the pin at Vehicle Customs trader!";
+        throw "You cannot claim this!";
     };
     _pincode = 4 call ExileClient_gui_keypadDialog_show;
 
