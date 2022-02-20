@@ -29,13 +29,9 @@ try
     {
         throw "You cannot claim this vehicle";
     };
-    if (_vehicle getVariable ["ExileIsPersistent", true]) then
+    if (_vehicle getVariable ["ExileIsPersistent", false]) then
     {
         throw "This vehicle is already owned";
-    };
-    if !(isNil {_vehicleObj getVariable "SC_drivenVehicle"}) then
-    {
-        throw "Vehicle is owned by the server";
     };
     if !(count _pinCode == 4) then
     {
